@@ -1,0 +1,13 @@
+﻿@page
+@model TorreControlRaze.Pages.Recatpchap.RecatpchaModel
+@using Google.ReCaptcha.AspNetCore
+@inject IReCaptchaService ReCaptcha
+@{
+}-
+<form method="post">
+    <div class="form-group">
+        <!-- Tu código de formulario aquí -->
+        <div class="g-recaptcha" data-sitekey="TU_LLAVE_SITE"></div>
+    </div>
+    <button type="submit" class="btn btn-primary">Enviar</button>
+</form>

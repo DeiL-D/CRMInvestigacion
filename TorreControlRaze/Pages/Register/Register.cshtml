@@ -1,0 +1,82 @@
+﻿@page
+@model TorreControlRaze.Pages.Register.RegisterModel
+@{
+}
+
+
+<head>
+ 
+</head>
+
+<body class="body">
+    <img src="~/img/Logo.png" />
+    <h2 style="text-align:center">Sign Up</h2>
+    <form method="post" id="myForm">
+        <div class="letters">
+            <br />
+            <br />
+
+            <div class="form-group row">
+                <div class="col-sm-4 col-form-label"></div>
+                <div class="col-sm-4 col-form-label">User</div>
+            </div>
+            <div class="form-group row headerLetters">
+                <div class="col-sm-4 col-form-label"></div>
+                <div class="col-sm-4">
+                    <input class="form-control" id="inputUser" name="userID" placeholder="User Name" maxlength="7" required>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <div class="col-sm-4 col-form-label"></div>
+                <div class="col-sm-4 col-form-label">Password</div>
+            </div>
+            <div class="form-group row headerLetters">
+                <div class="col-sm-4 col-form-label"></div>
+                <div class="col-sm-4">
+                    <input type="password" class="form-control" id="pwd1" name="contraseña" placeholder="Password" maxlength="16" required>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <div class="col-sm-4 col-form-label"></div>
+                <div class="col-sm-4 col-form-label">Repeat your password</div>
+            </div>
+            <div class="form-group row headerLetters">
+                <div class="col-sm-4 col-form-label"></div>
+                <div class="col-sm-4">
+                    <input type="password" class="form-control" id="pwd2" name="contraseña2" placeholder="Repeat your password" maxlength="16" required>
+                </div>
+            </div>
+
+            <br />
+            <div class="form-group row headerLetters">
+                <label class="col-sm-5 col-form-label"></label>
+                <div class="col-sm-4">
+                    <button type="submit" class="button" onclick="verifyPasswords()" asp-page-handler="Register">Register</button>
+                </div>
+            </div>
+            
+        </div>
+    </form>
+</body>
+
+<script>
+     function verifyPasswords() {
+        //Getting the values of the password fields
+        pass1 = document.getElementById('pwd1');
+        pass2 = document.getElementById('pwd2');
+        //Check if the passwords do not match
+        if (pass1.value != pass2.value) {
+            //If the passwords do not match, a message is displayed
+            alert("The passwords doesn't match");
+            //Restting the fields and moving the cursor to pwd1
+            pass1.value = "";
+            pass2.value = "";
+            pass1.focus();
+           
+        }
+     }
+</script>
+
+
